@@ -1,0 +1,399 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Quest</title>
+    
+    <!--css link-->
+    <link rel="stylesheet" href="{% static 'crimsonquest_django/css/mainnn.css' %}">
+    <!--logo-->
+    <link rel="icon" href="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}">
+
+    <!-- font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .sub-menu-wrap {
+            position: absolute;
+            top: 100%;
+            right: 9%;
+            width: 25rem;
+            max-height: 0rem;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+
+        .sub-menu-wrap.open-menu {
+            max-height: 50rem;
+        }
+
+
+        .sub-menu {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .admin-info h2 {
+            font-weight: bold;
+        }
+
+        .admin-info img {
+            width: 60px;
+            border-radius: 50%;
+            margin-right:20px;
+        }
+
+        .sub-menu hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background: black;
+            margin: 15px 0 10px;
+        }
+
+        .sub-menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+
+        }
+
+        .sub-menu-link p {
+            width: 100%;
+            font-size: 15px;
+        }
+
+        .sub-menu-link img {
+            width: 40px;
+            padding: 4.5px;
+            margin-right: 5px;
+        }
+
+        .sub-menu-link span {
+            font-size: 15px;
+            transition: transform 0.5s;
+        }
+
+        .sub-menu-link:hover span {
+            transform: translateX(5px);
+        }
+
+        .sub-menu-link:hover p {
+            font-weight: 800;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- header start -->
+
+<header class="fixHeader">
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo">
+        <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}" alt="CrimsonQuest Logo">
+        <span>Crimson</span>Quest
+    </a>
+
+    <nav class="navbar">
+        <a href="../../../map">CAMPUS</a>
+    </nav>
+
+    <div class="icons">
+        <i class="" id="search-btn"></i>
+        <i class="bx bxs-user-circle" id="user-btn" onclick="toggleMenu()"></i>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="admin-info">
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/iconuser.png' %}" alt="">
+                    <h2>{{ user.get_full_name }}</h2>
+                </div>
+                <hr>
+
+                <a href="../../../map/accSettings" class="sub-menu-link">
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/settings.png' %}" alt="">
+                    <p>Account Settings</p>
+                    <!--<span>></span>-->
+                </a>
+
+
+                <a href="../../../../" class="sub-menu-link">
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logoutt.png' %}" alt="">
+                    <p>Logout</p>
+                    
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+</header>
+<!-- header end-->
+
+<!-- <section class="css" id="css">
+    
+    <div class="row">
+        <div class="college-image">
+            <img src="imgs/ccs.jpg" alt="">
+        </div>
+
+        <div class="info">
+            <h3>College of Computing Studies</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et exercitationem, consequatur provident architecto</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et exercitationem, consequatur provident architecto</p>
+        </div>
+
+    </div>
+</section> -->
+
+
+
+
+<!-- Map And College info starts -->
+
+<section class="css" id="css">
+    <div class="row">
+        <div class="collegeImage">
+            <img src="{{ highschool.hsMap.url }}" alt="map">
+        </div>
+
+        <div class="info">
+            <h3>{{ highschool.hsName }}</h3>
+            <p>{{ highschool.hsInfo }}</p>
+        </div>
+    </div>
+
+    <div class="popup-map">
+        <span>&times;</span>
+        <span id="download"><i class="fa-solid fa-download"></i></span>
+        <img src="{{ highschool.hsMap.url }}" alt="hsMap">
+    </div>
+
+</section>
+
+
+
+<section class="colleges" id="colleges">
+    
+    
+
+    <div class="box-container">
+        
+        <div class="box">
+            <img src="{{ highschool.hsPic1.url }}" alt="1">
+        </div>
+
+        <div class="box">
+            <img src="{{ highschool.hsPic2.url }}" alt="3">
+        </div>
+
+        <div class="box">
+            <img src="{{ highschool.hsPic3.url }}" alt="3">
+        </div>
+
+    </div>
+
+</section>
+<!-- Map And College info ends -->
+
+
+
+
+<!--collegesstarts
+<section class="colleges" id="colleges">
+    
+    
+    <h1 class="heading">
+        <span>d</span>
+        <span>e</span>
+        <span>p</span>
+        <span>a</span>
+        <span>r</span>
+        <span>t</span>
+        <span>m</span>
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+        
+        <div class="box">
+            <img src="../WMSU LOGO/CAMPUS B/CCS.png" alt="">
+            <div class="content">
+                <br><br>
+                <h3>BSIT</h3>
+                <br>
+                <a href="#" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="../WMSU LOGO/CAMPUS B/CCS.png" alt="">
+            <div class="content">
+                <br><br>
+                <h3>BSCS</h3>
+                <br>
+                <a href="#" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="../WMSU LOGO/CAMPUS B/CCS.png" alt="">
+            <div class="content">
+                <br><br>
+                <h3>ACT</h3>
+                <br>
+                <a href="#" class="btn">Enter</a>
+            </div>
+        </div>
+
+          
+
+    </div>
+
+</section>
+colleges ends-->
+
+
+
+                    
+    <script src="{% static 'crimsonquest_django/js/cq.js' %}"></script>
+    <!--<script>
+        // JavaScript code to retrieve query parameters and update college details
+        const urlParams = new URLSearchParams(window.location.search);
+        const collegeName = urlParams.get('ccs');
+        const collegeImage = urlParams.get('img');
+        const collegeInfo = urlParams.get('info');
+        
+        const collegeImageElement = document.querySelector('.college-image img');
+        const collegeInfoElement = document.querySelector('.info h3');
+        const collegeInfoTextElement = document.querySelector('.info p');
+        
+        if (collegeName && collegeImage && collegeInfo) {
+            collegeImageElement.src = `imgs/${collegeImage}`;
+            collegeInfoElement.textContent = collegeName;
+            collegeInfoTextElement.textContent = collegeInfo;
+        }
+
+
+        
+        // Define an object to map college names to their respective images
+        const collegeImages = {
+            'College of Asian and Islamic Studies': [
+                'imgs/cais1.jpg',
+                'imgs/cais2.jpg',
+                'imgs/cais3.jpg',
+            ],
+            'College of Criminal Justice Education': [
+                'imgs/ccje1.jpg',
+                'imgs/ccje2.jpg',
+                'imgs/ccje3.jpg',
+            ],
+            'College of Computing Studies': [
+                'imgs/xccs1.jpg',
+                'imgs/xccs2.jpg',
+                'imgs/xccs3.jpg',
+            ],
+
+            'College of Science and Mathematics': [
+                'imgs/A.jpg',
+                'imgs/A.jpg',
+                'imgs/A.jpg',
+            ],
+
+            'College of Social Work and Community Development': [
+                'imgs/cswcd1.jpg',
+                'imgs/cswcd2.jpg',
+                'imgs/cswcd3.jpg',
+            ],
+
+            'College of Medicine': [
+                'imgs/A.jpg',
+                'imgs/A.jpg',
+                'imgs/A.jpg',
+            ],
+            // Add more colleges and their respective images
+        };
+
+        // Update the box-container based on the selected college
+        const boxContainer = document.querySelector('.box-container');
+
+        if (collegeName in collegeImages) {
+            const images = collegeImages[collegeName];
+            boxContainer.innerHTML = images.map(image => `
+                <div class="box">
+                    <img src="${image}" alt="">
+                </div>
+            `).join('');
+        }
+    
+    </script>-->
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+    
+    <!--for popupmap and download-->
+    <script>
+        document.querySelectorAll('.row img').forEach(hsImage =>{
+            hsImage.onclick = () =>{
+                document.querySelector('.popup-map').style.display = 'block';
+
+                /*remove this pag di gagana sa mga diff map*/
+                document.querySelector('.popup-map img').src =hsImage.getAttribute('src');
+                /*remove this pag di gagana sa mga diff map*/
+            }
+        });
+
+        document.querySelector('.popup-map span').onclick = () =>{
+            document.querySelector('.popup-map').style.display = 'none';
+        }
+
+        // Add the following code to handle the download button click
+        document.getElementById('download').onclick = () => {
+        const imageUrl = document.querySelector('.popup-map img').src;
+        const downloadLink = document.createElement('a');
+        downloadLink.href = imageUrl;
+        downloadLink.download = 'hsName';
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+        }
+
+    </script>
+
+
+</body>
+
+</html>
+

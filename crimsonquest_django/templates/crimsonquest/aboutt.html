@@ -1,0 +1,221 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Crimson Quest</title>
+    
+    <!--css link-->
+    <link rel="stylesheet" href="{% static 'crimsonquest_django/css/aboutStyles.css' %}">
+    <!--logo-->
+    <link rel="icon" href="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}">
+
+    <!-- font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+
+
+
+<!-- header start -->
+
+<header class="fixHeader">
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="../" class="logo">
+        <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}" alt="CrimsonQuest Logo">
+        <span>Crimson</span>Quest
+    </a>
+
+
+    <div class="icons">
+        <i class="" id="search-btn"></i>
+        <i class="" id="admin-btn"></i>
+    </div>
+
+    <nav class="navbar">
+        <a href="../">HOME</a>
+        <a href="#about">ABOUT US</a>
+    </nav>
+
+    
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+</header>
+
+
+<!-- about-->
+<section class="about" id="about">
+    
+    <div class="about-container">
+        <div class="about-img">
+            <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}" alt="">
+            <span class="circle-spin"></span>
+            
+        </div>
+    
+        <div class="aHeading">Crimson<span>Quest</span></div>
+
+    </div>
+
+    <div class="line"></div>
+    
+
+    
+
+    <div class="about-content">
+        <div class="quote">
+            <h3>Who we are</h3>
+        </div>
+        <div class="info">
+            <p>The CrimsonQuest is providing visual maps with clear directions and committed to enhanced student experience at Western Mindanao State University (WMSU). Our focus lies in simplifying the lives of Crimsons by offering an intuitive and user-friendly tool for efficient campus navigation.</p>
+        </div>
+
+    </div>
+
+    <div class="about-content">
+        <div class="quote">
+            <h3>Our Mission</h3>
+        </div>
+
+        <div class="box-container">
+
+            <div class="box">
+                <img src="{% static 'crimsonquest_django/images/36.png' %}" alt="">
+                <div class="content">
+                    <h3>Guide Crimson's Journey</h3>
+                    <p>CrimsonQuest is dedicated to being your essential tool for straightforward campus navigation. Offering visual maps with precision, our aim is to assist Crimsons in effortlessly discovering their way to key destinations.</p>
+                </div>
+            
+            </div>
+    
+            <div class="box">
+                <img src="{% static 'crimsonquest_django/images/37.png' %}" alt="">
+                <div class="content">
+                    <h3>To Help Visitors</h3>
+                    <p>Beyond simplifying the navigation for Crimsons, our mission expands to facilitating an easy exploration experience for visitors navigating the WMSU campus. CrimsonQuest is dedicated to delivering a dependable and accessible tool, ensuring a seamless and enjoyable visit for all.</p>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    
+    <h1 class="heading">
+        <span>O</span>
+        <span>U</span>
+        <span>R</span>
+        <span class="space"></span>
+        <span>T</span>
+        <span>E</span>
+        <span>A</span>
+        <span>M</span>
+    </h1>
+
+    <div class="team-container">
+        <div class="teamCard">
+            <div class="teams">
+                <div class="team">
+                    <div class="contentt">
+                        <div class="img">
+                            <img src="{% static 'crimsonquest_django/images/me.png' %}" alt="">
+                        </div>
+                        <div class="detailss">
+                            <div class="name">Mark Larenz Tabotabo</div>
+                            <div class="role">Lead Programmer</div>
+                        </div>
+                        <div class="media-icons">
+                            <a href="https://www.facebook.com/marklarenz.tabotabo/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/larenzzzx/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&fbclid=IwAR04iTYgsdPtoZx8tTWLMmk5RWzoUn6YfCDkvgpM2S3_6V32ALtC570AU5I"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team">
+                    <div class="contentt">
+                        <div class="img">
+                            <img src="{% static 'crimsonquest_django/images/raiza.png' %}" alt="">
+                        </div>
+                        <div class="detailss">
+                            <div class="name">Raiza Beligolo</div>
+                            <div class="role">UI/UX Designer</div>
+                        </div>
+                        <div class="media-icons">
+                            <a href="https://www.facebook.com/raiza.bels28?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/ziaramelon?igshid=NzZlODBkYWE4Ng=="><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="team">
+                    <div class="contentt">
+                        <div class="img">
+                            <img src="{% static 'crimsonquest_django/images/franz.png' %}" alt="">
+                        </div>
+                        <div class="detailss">
+                            <div class="name">Franz Nathaniel Valdez</div>
+                            <div class="role">Technical Writer</div>
+                        </div>
+                        <div class="media-icons">
+                            <a href="https://www.facebook.com/franzxvaldez14?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com/httprans.v?igshid=OGQ5ZDc2ODk2ZA=="><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <h3>Contact Us</h3>
+            <p>Email: crimsonquest@gmail.com</p>
+            <p>Phone: +63 935 245 3795</p>
+            <p>Address: Tetuan Zamboanga City</p>
+
+        </div>
+        <div class="footer-content">
+            <h3>Quick Links</h3>
+            <ul class="list">
+                <li><a href="../">HOME</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+            </ul>
+        </div>
+        <div class="footer-content">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <p>&copy; 2023 CrimsonQuest . All rights reserved</p>
+    </div>
+</footer>
+<!--about ends-->
+
+
+
+
+    <!-- js file-->
+    <script src="{% static 'crimsonquest_django/js/cq.js' %}"></script>
+
+</body>
+</html>

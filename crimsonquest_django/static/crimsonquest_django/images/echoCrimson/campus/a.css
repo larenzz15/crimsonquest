@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Poopins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poopins",sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(campus.png);
+}
+
+.card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    height: 320px;
+    width: 296px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.flex-container {
+    margin: 20px;
+}
+
+section .card .image {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #fff;
+    box-shadow: 0px -1px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+section .card .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.box1 {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    border-radius: 20px 20px 0 0;
+    background: linear-gradient(106.32deg, crimson 14.23%, rgba(255, 25, 25, 0) 139.97%);
+}
+
+.card .colleges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.colleges .name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.card .button {
+    width: 100%;
+    display: flex;
+    justify-content: center /*space-around*/;
+    margin-top: 30px;
+}
+
+.card .button button {
+    background: crimson;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.button button:hover {
+    opacity: 0.8;
+}
+
+

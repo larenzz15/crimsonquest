@@ -1,0 +1,76 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	scroll-behavior: none;
+	font-family: "Poopins",sans-serif;
+}
+
+.header {
+    position: fixed; 
+	top: 0;
+	left: 0; /* 0; */
+	width: 100%; 
+	padding: 2rem 7%;/*25px 12.5%*/
+	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+}
+
+
+
+.btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	background: crimson;
+	border-radius: .6rem;
+	box-shadow: 0 .2rem .5rem;
+	font-size: 1.6rem;
+	color: white;
+	letter-spacing: .1rem;
+	font-weight: 600;
+	transition: .5s ease;
+}
+
+.btn:hover {
+	background: transparent;
+	color: crimson;
+}
+
+.campus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background: url('campus.png') no-repeat;
+	background-position: center;
+    background-size: cover;
+	padding: 0 10%;
+	min-height: 100vh;
+}
+
+.a-img img {
+    width: 30vw;
+    height: 30vw;
+    margin-left: 4.5rem;
+    margin-top: 35%;
+    margin-bottom: 35%;
+    border-radius: 100%;
+
+}
+
+.heading {
+    font-size: 4.5rem;
+    color: crimson;
+    text-align: center;
+}
+
+.a-content h2 {
+    text-align: left;
+    line-height: 1.2;
+    margin: 2rem 0 3rem;
+}

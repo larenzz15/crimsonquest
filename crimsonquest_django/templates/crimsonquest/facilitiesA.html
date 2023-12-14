@@ -1,0 +1,336 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Quest</title>
+    
+    <!--css link-->
+    <link rel="stylesheet" href="{% static 'crimsonquest_django/css/mainnn.css' %}">
+    <!--logo-->
+    <link rel="icon" href="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}">
+
+    <!-- font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        .sub-menu-wrap {
+            position: absolute;
+            top: 100%;
+            right: 9%;
+            width: 25rem;
+            max-height: 0rem;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+
+        .sub-menu-wrap.open-menu {
+            max-height: 50rem;
+        }
+
+
+        .sub-menu {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .admin-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .admin-info h2 {
+            font-weight: bold;
+        }
+
+        .admin-info img {
+            width: 60px;
+            border-radius: 50%;
+            margin-right:20px;
+        }
+
+        .sub-menu hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background: black;
+            margin: 15px 0 10px;
+        }
+
+        .sub-menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+
+        }
+
+        .sub-menu-link p {
+            width: 100%;
+            font-size: 15px;
+        }
+
+        .sub-menu-link img {
+            width: 40px;
+            padding: 4.5px;
+            margin-right: 5px;
+        }
+
+        .sub-menu-link span {
+            font-size: 15px;
+            transition: transform 0.5s;
+        }
+
+        .sub-menu-link:hover span {
+            transform: translateX(5px);
+        }
+
+        .sub-menu-link:hover p {
+            font-weight: 800;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- header start -->
+
+<header class="fixHeader">
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo">
+        <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logo.png' %}" alt="CrimsonQuest Logo">
+        <span>Crimson</span>Quest
+    </a>
+
+    <nav class="navbar">
+        <a href="../../map">CAMPUS</a>
+        <a href="../Acampus">CATEGORY</a>
+    </nav>
+
+    <div class="icons">
+        <i class="" id="search-btn"></i>
+        <i class="bx bxs-user-circle" id="user-btn" onclick="toggleMenu()"></i>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="admin-info">
+                
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/iconuser.png' %}" alt="">
+                    <h2>{{ user.get_full_name }}</h2>
+                </div>
+                <hr>
+
+                <a href="../../map/accSettings" class="sub-menu-link">
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/settings.png' %}" alt="">
+                    <p>Account Settings</p>
+                    <!--<span>></span>-->
+                </a>
+
+
+                <a href="../../../" class="sub-menu-link">
+                    <img src="{% static 'crimsonquest_django/images/wmsu/imgs/logoutt.png' %}" alt="">
+                    <p>Logout</p>
+                    
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+</header>
+<!-- header end-->
+
+
+
+<!--colleges starts-->
+<section class="colleges" id="colleges">
+    
+    <br><br><br><br>
+    <h1 class="heading">
+        <span>F</span>
+        <span>A</span>
+        <span>C</span>
+        <span>I</span>
+        <span>L</span>
+        <span>I</span>
+        <span>T</span>
+        <span>I</span>
+        <span>E</span>
+        <span>S</span>
+
+    </h1>
+
+
+
+
+
+    <div class="box-container">
+        
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Administrative Building.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ adblg.facilityName }}</h3>
+                <br>
+                <a href="{% url 'facilityMaps' facility_id=adblg.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Admission Office.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ ao.facilityName }}</h3>
+                <br>
+                <a href="{% url 'facilityMaps' facility_id=ao.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Campus Ministry.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ cmm.facilityName }}</h3>
+                <br>
+                <a href="{% url 'facilityMaps' facility_id=cmm.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Executive Building.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ exe.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=exe.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Gymnasium.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ gym.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=gym.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Health Center Services.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ hhs.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=hhs.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Library.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ lib.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=lib.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/osa.jpg' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ osa.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=osa.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Registrar.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ regis.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=regis.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Research Center.png' %}" alt="">
+            <div class="content">
+                <br><br>
+                <h3>{{ rcc.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=rcc.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Registrar.png' %}" alt="">
+            <div class="content">
+                
+                <h3>{{ spec.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=spec.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/Registrar.png' %}" alt="">
+            <div class="content">
+                
+                <h3>{{ usa.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=usa.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/U-Press.png' %}" alt="">
+            <div class="content">
+                
+                <h3>{{ upress.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=upress.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+
+        <div class="box">
+            <img src="{% static 'crimsonquest_django/images/FACILITIES LOGO/CAMPUS A/WMSU Hostel.png' %}" alt="">
+            <div class="content">
+                
+                <h3>{{ hostel.facilityName }}</h3><br>
+                <a href="{% url 'facilityMaps' facility_id=hostel.facilityID %}" class="btn">Enter</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</section>
+<!--colleges ends-->
+
+
+    <script src="{% static 'crimsonquest_django/js/cq.js' %}"></script>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+
+</html>
+

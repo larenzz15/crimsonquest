@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Crimson Quest</title>
+
+	    <link rel="stylesheet" href="mapping.css">
+	    <link rel="icon" href="logo.png">
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Kunin lahat ng mga elements na may class "btn"
+                var enterButtons = document.querySelectorAll(".btn");
+            
+                // I-attach ang event listener para sa click event sa bawat button
+                enterButtons.forEach(function (button) {
+                    button.addEventListener("click", function (event) {
+                        // Gawing redirect ang user sa "campusA.html" na nasa loob ng "campusA" folder
+                        window.location.href = "campus/campusA.html";
+                        
+                        // Ito ay upang pigilin ang default behavior ng link
+                        event.preventDefault();
+                    });
+                });
+            });
+        </script>
+            
+    </head>
+
+    <body>
+        <!--
+        <header class="header">
+            <img src="logo.png" alt="EchoCrimson Logo" class="logo">
+        </header>
+            -->
+        
+        <section class="campus">
+            
+            <div class="a-content">
+                <h2 class="heading">CAMPUS A</h2>
+                <a href="#" class="btn">Enter</a>
+            </div>
+
+            <div class="a-img">
+                <img src="A.jpg" alt="CAMPUS A">
+            </div>
+
+        </section>
+
+        <section class="campus">
+            
+            <div class="a-content">
+                <h2 class="heading">CAMPUS B</h2>
+                <a href="#" class="btn">Enter</a>
+            </div>
+
+            <div class="a-img">
+                <img src="A.jpg" alt="CAMPUS B">
+            </div>
+        </section>
+
+        <div class="img-container">
+            <img src="campus.png" alt="">
+        </div>
+
+    </body>
+</html>
